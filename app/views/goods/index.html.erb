@@ -1,0 +1,21 @@
+<h1>All Goods</h1>
+<hr/>
+<% @goods.each  do |good|%>
+	<div class="row">
+		<div class="col-md-2">
+			<section class="shop_info center">
+			</section>
+		</div>
+
+		<div class="col-lg-8 well">
+			<h4><%= link_to good.name, " " %></h4>
+			<h4><%=good.price%>k (vnd)</h4>
+			<p><%=good.summary%></p>
+			<p>
+				<span class="quite">
+					<small><%=time_ago_in_words(good.created_at)%> ago</small>
+				</span>
+			</p>
+		</div>
+	</div>	
+<%end%>
