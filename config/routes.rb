@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
-  get '/home', to: 'pages#home'
+
+  get 'goods/index'
 
   root 'pages#home'
+
+  get '/home', to: 'pages#home'
+  get '/goods', to: 'goods#index'
+  get '/goods/new', to: 'goods#new', as: 'new_good'
+  post '/goods', to: 'goods#create'
+  get '/goods/:id/edit', to: 'goods#edit', as: 'edit_good'
+  patch '/goods/:id', to: 'goods#update'
+  get '/goods/:id', to: 'goods#show', as: 'show_good'
+  delete '/goods/:id', to: 'goods#destroy'
+
+  resources :goods
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
