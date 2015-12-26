@@ -1,0 +1,26 @@
+<p>
+<h1><%=@good.name%></h1>
+</p>
+<div class="row">
+<div class="col-md-4 pull-right center">
+<%=gravatar_for @good.shop, saize: 200 %>
+	<p>
+	<h5>Buy at: <%=@good.shop.shopname%></h5>
+	</p>
+</div>
+<div class="col-md-8">
+	<h3><%=@good.summary%></h3>
+	<div class="well">
+		<p>
+			<strong>Description:</strong>
+		</p>
+		<%=@good.description%>
+	</div>
+	<p>Price:
+		<h5 class="price"><%=@good.price%>k (vnd)</h5>
+	</p>
+</div>
+</div>
+
+<h5><%=link_to "Buy it", goods_path, class:"btn btn-success btn-small"%></h5>
+<h5><%=link_to "Return to Goods Listings", goods_path, class:"btn btn-warning btn-small"%></h5>
